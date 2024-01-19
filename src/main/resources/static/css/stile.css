@@ -1,0 +1,277 @@
+body {
+	background-color: lightgray;
+	font-family: Arial, serif;
+}
+
+section {
+	min-height: 525px;
+	position: static;
+	vertical-align: center;
+}
+
+h1.testoImmagine {
+	color: white;
+	font-size: 50px;
+	font-family: Calibri, serif;
+	text-align: center;
+	margin-top: -5%;
+}
+
+img.testoImmagine {
+	width: 100%;
+}
+
+
+#flex-macchina {
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  height: 300px;
+}
+
+
+
+div.macchina {
+ 	border: 2px solid black;
+ 	height: 300px;
+  	width: 40%;
+}
+
+img.macchina {
+	height: 100%;
+  	width: 100%;
+}
+
+#flex-opzioni {
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  height: 300px;
+}
+
+div.opzioni {
+ 	border: 2px solid black;
+ 	height: 300px;
+  	width: 20%;
+}
+
+img.opzioni {
+	height: 100%;
+  	width: 100%;
+}
+
+#flex-risultati {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.risultati {
+ 	border: 2px solid black;
+ 	height: 300px;
+  	width: 100%;
+  	margin-bottom: 2px;
+}
+
+p.risultati {
+	color: black;
+  	font-size: 34px;
+  	text-align: justify;
+  	margin-top: 2px;
+  	margin-bottom: 2px;
+}
+
+img.risultati {
+	height: 80%;
+	width: 80%;
+	margin-left: 15%;
+}
+
+table.risultati {
+	height: 100%;
+	border: 0px solid black;
+}
+
+tr.risultati {
+	width: 100%;
+	align-items: center;
+}
+
+img.utente {
+	height: 90%;
+	width: 90%;
+}
+
+
+header{
+	background: darkred;
+	height: 102px;
+	width: 100%;
+	border: 0px solid black;
+}
+
+#table-header {
+	height: 100%;
+	border: 0px solid black;
+}
+
+tr.header {
+	width: 100%;
+}
+
+p.header {
+	color: white;
+	font-size: 34px;
+}
+
+
+h1.header {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: white;
+  	font-size: 60px;
+	margin-left: 25%;
+}
+
+h1.errore {
+	font-size: 100px;
+	font-family: Arial;
+	color: black;
+}
+
+a.header {
+	text-decoration: none;
+	color: white;
+	font-size: 34px;
+}
+
+img.header {
+	height: 90px;
+	width: 90px;
+	margin-top: 4px;
+}
+
+h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: black;
+  	font-size: 40px;
+}
+
+h2.risultati {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: black;
+  	font-size: 50px;
+}
+
+a.risultati {
+	text-decoration: none;
+	color: black;
+}
+
+
+footer{	
+  margin-top: 20px;
+  display: flex;
+  height: 30px;
+	width: 100%;
+  background: darkred;
+  align-items: center;
+
+}
+
+p.fine {
+	margin-left: 38%;
+	font-size: 20px;
+  	color: white;
+}
+
+section {
+	flex-grow: 1;
+}
+
+p {
+  color: black;
+  font-size: 32px;
+  text-align: justify;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+input, select {
+	height: 36px;
+	font-size: 24px;
+	font-family: Arial, serif;
+	background-color: rgba(139, 0, 0, 0.3);
+	color: white;
+}
+
+::placeholder {
+	color: white;
+}
+
+option {
+	height: 36px;
+	font-size: 32px;
+	font-family: Arial, serif;
+}
+
+span.errore {
+	font-family: Arial, serif;
+	font-size: 24px;
+	color: red;
+}
+
+#flex-continua {
+	display: flex;
+	height: 40px;
+	width: 45px;
+	margin-left: 650px;
+}
+
+button {
+	border: white;
+	background-color: darkred;
+	color: white;
+	border-radius: 12px;
+	font-size: 34px;
+	font-family: Arial, serif;
+}
+
+#flex-risultatiPrenotazioni {
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+div.risultatiPrenotazioni {
+	border: 2px solid black;
+	height: 200px;
+	width: 100%;
+	margin-bottom: 2px;
+}
+
+p.risultatiPrenotazioni {
+	color: black;
+	font-size: 34px;
+	text-align: justify;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+a.risultatiPrenotazioni {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	color: red;
+	font-size: 24px;
+}
+
+fieldset {
+	background-color: rgb(200,200,200);
+}

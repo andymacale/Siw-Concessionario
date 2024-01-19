@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<head>
+		<title>
+			Concessionario Macale - Risultati
+		</title>
+		<link rel="stylesheet" href="/css/stile.css?version=2" />
+	</head>
+	
+	<body>
+        <header>
+			<table id="table-header">
+				<tr class="header">
+					<td style="width:5%">
+						<a class="header" href="/admin/opzioni"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+					</td>
+					<td style="width:90%">
+						<h1 class="header">Concessionario Macale</h1>
+					</td>
+					<td style="width:5%">
+						<a class="header" href="/logout"><img class="header" src="/immagini/pulsanti/profiloAdmin.png"/></a>
+					</td>
+				</tr>
+			</table>
+		</header>
+          
+        <article>
+          
+          
+         <section>
+			<h2 class="risultati"> Utenti registrati:
+				<span th:text="${num}">numero</span>
+			</h2>
+
+			  <div id="flex_risultatiPrenotazioni">
+				<div class="risultatiPrenotazioni" th:each="credenziale : ${credenziali}">
+					<a class="risultatiPrenotazioni" th:href="@{'/admin/risUtenti'+'/'+ ${credenziale.utente.id}}">
+						<table class="risultati">
+							<tr class="risultati">
+								<td style="width: 90%">
+									<p class="risultatiPrenotazioni">
+										<b>Nome:</b> <span th:text="*{credenziale.utente.nome}">nome</span>
+									</p>
+									<p class="risultatiPrenotazioni">
+										<b>Cognome:</b> <span th:text="*{credenziale.utente.cognome}">cognome</span>
+									</p>
+									<p class="risultatiPrenotazioni">
+										<b>Data di nascita:</b> <span th:text="*{credenziale.utente.dataNascita}">data</span>
+									</p>
+									<p class="risultatiPrenotazioni">
+										<b>Email:</b> <span th:text="*{credenziale.username}">email</span>
+									</p>
+								</td>
+								<td style="width: 10%">
+									<span th:if="*{credenziale.ruolo == 'ADMIN'}">
+										<img class="utente" src="/immagini/pulsanti/profiloAdmin.png" />
+									</span>
+									<span th:unless="*{credenziale.ruolo == 'ADMIN'}">
+										<img class="utente" src="/immagini/pulsanti/profilo.png" />
+									</span>
+								</td>
+							</tr>
+						</table>
+
+					</a>
+				</div>	
+			</div>
+          </section>
+          
+          <footer>
+			  <p class="fine">Creato da: Andrea Macale (matr. 560793)</p>
+		  </footer>
+          
+      </article>
+	</body>		
+</html>

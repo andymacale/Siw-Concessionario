@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Concessionario Macale - Prenotazione
+    </title>
+    <link rel="stylesheet" href="/css/stile.css?version=2" />
+</head>
+
+<body>
+<header>
+    <table id="table-header">
+        <tr class="header">
+            <td style="width:5%">
+                <a class="header" href="/admin/opzioni"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+            </td>
+            <td style="width:90%">
+                <h1 class="header">Concessionario Macale</h1>
+            </td>
+            <td style="width:5%">
+                <a class="header" href="/logout"><img class="header" src="/immagini/pulsanti/profiloAdmin.png"/></a>
+            </td>
+        </tr>
+    </table>
+</header>
+
+<article>
+
+
+    <section>
+        <div th:if="${prenotazione}">
+                <h2>Prenotazione: </h2>
+               <p class="risultati">
+                    <b>Consulente:</b> <span th:text="*{prenotazione.consulente.nome}">nome </span> <span th:text="*{prenotazione.consulente.cognome}">cognome</span>
+                </p>
+            <p class="risultati">
+                <b>Utente:</b> <span th:text="*{prenotazione.persona.email}">email</span>
+            </p>
+                <p class="risultati">
+                    <b>Data:</b> <span th:text="*{prenotazione.dataPrenotazione}">nome</span>
+                </p>
+                <p class="risultati">
+                    <b>Ora:</b> <span th:text="*{prenotazione.ora}">ora</span>
+                </p>
+
+                     <span th:if="*{prenotazione.veicolo == null}">
+                         <p class="risultati">
+                            <b>Veicolo:</b> Nessuno
+                         </p>
+                     </span>
+                     <span th:unless="*{prenotazione.veicolo == null}">
+                         <div id="flex_risultati">
+                            <div class="risultati" >
+                                    <table class="risultati">
+                                        <tr class="risultati">
+                                            <td style="width: 50%">
+                                                <p class="risultati">
+                                                    <b>Fabbrica:</b> <span th:text="*{prenotazione.veicolo.modello.fabbrica}">fabbrica</span>
+                                                </p>
+                                                <p class="risultati">
+                                                    <b>Nome:</b> <span th:text="*{prenotazione.veicolo.modello.nome}">nome</span>
+                                                </p>
+                                                <p class="risultati">
+                                                    <b>Anno:</b> <span th:text="*{prenotazione.veicolo.anno}">anno</span>
+                                                </p>
+                                                <p class="risultati">
+                                                    <b>Cambio:</b> <span th:text="*{prenotazione.veicolo.cambio}">cambio</span>
+                                                </p>
+                                                <p class="risultati">
+                                                    <b>Colore:</b> <span th:text="*{prenotazione.veicolo.colore}">colore</span>
+                                                </p>
+                                                <p class="risultati">
+                                                    <b>Motorizzazione:</b> <span th:text="*{prenotazione.veicolo.alimentazione.carburante}">carburante</span>
+                                                </p>
+                                                <p class="risultati">
+                                                    <b>Prezzo:</b> €<span th:text="*{prenotazione.veicolo.prezzo}">prezzo</span>
+                                                </p>
+                                            </td>
+                                            <td style="width: 25%">
+                                                <span th:if="*{prenotazione.veicolo.venduta}">
+                                                    <img class="risultati" src="/immagini/venduta.png" />
+                                                </span>
+                                                <span th:unless="*{prenotazione.veicolo.venduta}">
+                                                    <img class="risultati" src="/immagini/disponibile.png" />
+                                                </span>
+                                            </td>
+                                            <td style="width: 25%">
+                                                <span th:if="*{prenotazione.veicolo.urlImmagine == null}">
+                                                    <img class="risultati" src="/immagini/non_trovata.png" />
+                                                </span>
+                                                <span th:unless="*{prenotazione.veicolo.urlImmagine == null}">
+                                                    <img class="risultati" src="*{veicolo.urlImmagine}" />
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                            </div>
+                        </div>
+                     </span>
+                </p>
+
+        </div>
+        <div th:unless="${prenotazione}">Non esiste</div>
+    </section>
+
+    <footer>
+        <p class="fine">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>

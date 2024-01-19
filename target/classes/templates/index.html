@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:position="http://www.w3.org/1999/xhtml">
+	<meta charset="utf-8">
+	<head>
+		<title>
+			Concessionario Macale - Infopage
+		</title>
+		<link rel="stylesheet" href="/css/stile.css" />
+	</head>
+	
+	<body>
+        <header>
+			<table id="table-header">
+				<tr class="header">
+					<td style="width:5%">
+						<a class="header" href="/homepage"><img class="header" src="/immagini/pulsanti/home.png" /></a>
+					</td>
+					<td style="width:90%">
+						<h1 class="header">Concessionario Macale</h1>
+					</td>
+					<td style="width:5%">
+						<span th:unless="${userDetails}">
+								<a class="header" href="/login">Accedi</a>
+							</span>
+						<span th:if="${userDetails}">
+							   <a class="header" href="/logout"><img class="header" src="/immagini/pulsanti/profilo.png"/></a>
+						</span>
+					</td>
+				</tr>
+			</table>
+		 </header>
+          
+        <article>
+          
+          
+         <section>
+
+			 <!--<div style="background-image: url('/immagini/ferrari.jpg'); height: 100%; width: 100%; position: ">
+				 <h1 style="color: white; font-size:50px; text-align: center">BENVENUTI NEL CONCESSIONARIO MACALE</h1>
+				 <img style="width: 100%; margin-top: -11.5%" src="/immagini/ferrari.jpg" />
+			 </div>-->
+			<div>
+			 	<img class="testoImmagine" src="/immagini/ferrari.jpg" />
+			 	<h1 class="testoImmagine">BENVENUTI NEL CONCESSIONARIO MACALE</h1>
+			</div>
+			 <div style="margin-top: 5%">
+
+			 </div>
+			 <p style="text-align: center">Cerchi l'auto dei tuoi sogni: sei nel posto giusto!</p>
+			 <p style="text-align: center">Vendiamo auto di ogni tipo: consulta il nostro sito per cercare l'auto. Non ti costa nulla ;)</p>
+
+			 	<div id="flex-macchina">
+					 <div class="macchina">
+						 <img class="macchina" src="/immagini/lamborghini.JPG"/>
+					 </div>
+
+					 <div class="macchina">
+						 <img class="macchina" src="/immagini/maserati.jpg"/>
+					 </div>
+
+					<div class="macchina">
+						<img class="macchina" src="/immagini/bugatti.jpg"/>
+					</div>
+
+				 </div>
+
+				 <p>
+
+               Inoltre, ti interessa sapere qualche cosiglio su un auto specifica o cercare dei consigli sull'auto
+					 più adatta a te. Registrati sul nostro sito e prenota un appuntamento con uno dei nostri consulenti:
+					 sicuramente ti sapranno dare una mano.
+            </p>
+          </section>
+          
+          <footer>
+			  <p class="fine">Creato da: Andrea Macale (matr. 560793)</p>
+			 </footer>
+          
+      </article>
+	</body>		
+</html>

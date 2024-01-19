@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>
+        Concessionario Macale - Aggiorna
+    </title>
+    <link rel="stylesheet" href="/css/stile.css?version=2" />
+</head>
+
+<body>
+<header>
+    <table id="table-header">
+        <tr class="header">
+            <td style="width:5%">
+                <a class="header" href="/admin/aggiorna"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+            </td>
+            <td style="width:90%">
+                <h1 class="header">Concessionario Macale</h1>
+            </td>
+            <td style="width:5%">
+                <a class="header" href="/logout"><img class="header" src="/immagini/pulsanti/profiloAdmin.png"/></a>
+            </td>
+        </tr>
+    </table>
+</header>
+
+<article>
+
+
+    <section>
+        <form th:action="@{/admin/vendi}" method="POST">
+            <fieldset>
+                <h2>Seleziona la macchina:</h2>
+                <select name="telaio">
+                    <option value=""> </option>
+                    <span th:each="veicolo : ${veicoli}">
+							<option th:value="*{veicolo.telaio}">
+								<span th:text="*{veicolo.modello.fabbrica}">fabbrica </span>
+								<span th:text="*{veicolo.modello.nome}">nome </span>
+                                telaio: <span th:text="*{veicolo.telaio}">telaio </span>
+                                targa: <span th:text="*{veicolo.targa}">targa </span>
+                                prezzo:
+                                <span th:text="*{veicolo.prezzo}">prezzo </span>
+							</option>
+						</span>
+                </select>
+            </fieldset>
+            <fieldset>
+                <p>Lasciare vuoto se si vuole mantanere il prezzo originale</p>
+                <p>
+                    Prezzo: <input type="text" name="prezzo" placeholder="Prezzo"/><br>
+                </p>
+            </fieldset>
+
+            <p><button type="submit">INSERISCI</button></p>
+        </form>
+
+    </section>
+
+    <footer>
+        <p class="fine">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>

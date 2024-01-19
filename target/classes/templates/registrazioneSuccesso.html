@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Registrazione conclusa</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	<header>
+		<table id="table-header">
+			<tr class="header">
+				<td style="width:5%">
+					<a class="header" href="/prenota"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+				</td>
+				<td style="width:90%">
+					<h1 class="header">Concessionario Macale</h1>
+				</td>
+				<td style="width:5%">
+					<p class="header"><a class="header" href="/homepage">Accedi</a></p>
+				</td>
+			</tr>
+		</table>
+	</header>
+
+	<h2>Congratulazioni ti sei registrato!</h2>
+	<div>
+		<p>
+			<span><b>Nome</b>: </span>
+			<span th:text="${utente.nome}"></span>
+		</p>
+	</div>
+	<div>
+		<p>
+			<span><b>Cognome</b>: </span>
+			<span th:text="${utente.cognome}"></span>
+		</p>
+	</div>
+	<div>
+		<p>
+		<span><b>Email</b>: </span>
+		<span th:text="${utente.email}"></span>
+		</p>
+	</div>
+</body>
+</html>

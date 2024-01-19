@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<head>
+		<title>
+			Concessionario Macale - Aggiungi
+		</title>
+		<link rel="stylesheet" href="/css/stile.css?version=2" />
+	</head>
+	
+	<body>
+        <header>
+			<table id="table-header">
+				<tr class="header">
+					<td style="width:5%">
+						<a class="header" href="/admin/aggiungi"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+					</td>
+					<td style="width:90%">
+						<h1 class="header">Concessionario Macale</h1>
+					</td>
+					<td style="width:5%">
+						<a class="header" href="/logout"><img class="header" src="/immagini/pulsanti/profiloAdmin.png"/></a>
+					</td>
+				</tr>
+			</table>
+		</header>
+          
+        <article>
+          
+          
+         <section>
+           <p><sup>*</sup>: Campo obbligatorio</p>
+			<h2>Consulente: </h2>
+           <form th:action="@{/admin/consulenti}" method="POST">
+			   <p>
+				   Nome:<sup>*</sup> <input type="text" name="nome" placeholder="Nome"/><br>
+				   <!--<span class="errore" th:if="${#fields.hasErrors('nome')}" th:errors="${nome}">Errore</span>-->
+			   </p>
+
+			   <p>
+				   Cognome:<sup>*</sup> <input type="text" name="cognome" placeholder="Cognome"/><br>
+				   <!-- <span class="errore" th:if="${#fields.hasErrors('cognome')}" th:errors="${cognome}">Errore</span>-->
+			   </p>
+			   <p>
+				   Sesso:<sup>*</sup>
+
+				   <select name="sesso" id="lang">
+					   <option value=""> </option>
+					   <option value="M">Maschile</option>
+					   <option value="F">Femminile</option>
+				   </select>
+				   <br>
+				   <!--<span class="errore" th:if="${#fields.hasErrors('sesso')}" th:errors="${sesso}">Errore</span>-->
+			   </p>
+			   <p>
+				   Data di nascita:<sup>*</sup> <input type="date" name="dataDiNascita" placeholder="Data di nascita"/><br>
+				   <!--<span class="errore" th:if="${#fields.hasErrors('dataDiNascita')}" th:errors="${dataDiNascita}">Errore</span>-->
+			   </p>
+			   <p>
+				   Codice fiscale:<sup>*</sup> <input type="text" name="codiceFiscale" placeholder="Codice fiscale"/><br>
+				   <!-- <span class="errore" th:if="${#fields.hasErrors('codiceFiscale')}" th:errors="${codiceFiscale}">Errore</span>-->
+			   </p>
+			   <p><button type="submit">INSERISCI</button></p>
+			   <div th:object="${consulente}">
+				   <ul th:if="${#fields.hasGlobalErrors()}">
+					   <p style="color: red">Errori consulente:</p>
+					   <li th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+						   ...
+					   </li>
+				   </ul>
+			   </div>
+          	 </form>
+          </section>
+          
+          <footer>
+			  <p class="fine">Creato da: Andrea Macale (matr. 560793)</p>
+		  </footer>
+          
+      </article>
+	</body>		
+</html>

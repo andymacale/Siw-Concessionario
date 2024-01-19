@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>
+        Concessionario Macale - Login
+    </title>
+    <link rel="stylesheet" href="/css/stile.css?version=2" />
+</head>
+
+<body>
+<header>
+    <table id="table-header">
+        <tr class="header">
+            <td style="width:5%">
+                <a class="header" href="/"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+            </td>
+            <td style="width:90%">
+                <h1 class="header">Concessionario Macale</h1>
+            </td>
+            <td style="width:5%">
+                <p class="header"></p>
+            </td>
+        </tr>
+    </table>
+</header>
+
+<article>
+
+
+    <section>
+        <form th:action="@{/register}" method="POST">
+            <p><sup>*</sup>: Campo obbligatorio</p>
+            <fieldset>
+            <h2>Utente</h2>
+                <p>
+                Nome<sup>*</sup>: <input type="text" placeholder="Nome"  th:field="${utente.nome}"/>
+                    <!-- <span th:if="${#fields.hasErrors('utente.nome')}" th:error="*{utente.nome}"></span> -->
+                </p>
+                <p>
+                    Cognome<sup>*</sup>: <input type="text" placeholder="Cognome"  th:field="${utente.cognome}"/>
+                    <span th:if="${#fields.hasErrors('utente.cognome')}" th:error="*{utente.cognome}"></span>
+                </p>
+                <p>
+                    Data di nascita<sup>*</sup>: <input type="date" placeholder="Data di nascita"  th:field="${utente.dataNascita}"/>
+                    <!--<span th:if="${#fields.hasErrors('utente.dataNascita')}" th:error="*{utente.dataNascita}"></span>-->
+                </p>
+
+            </fieldset>
+            <fieldset>
+                <h2>Credenziali</h2>
+                <p>
+                    Email<sup>*</sup>: <input type="text" placeholder="Email" th:field="${credenziali.username}"/>
+                    <!--<span th:if="${#fields.hasErrors('credenziali.username')}" th:error="*{credenziali.username}"></span>-->
+                </p>
+                <p>
+                    Password<sup>*</sup>: <input type="password" placeholder="Password"  th:field="${credenziali.password}"/>
+                    <!--<span th:if="${#fields.hasErrors('credenziali.password')}" th:error="*{credenziali.password}"></span>-->
+                </p>
+            </fieldset>
+            <p><button type="submit">REGISTRATI</button></p>
+            <div th:object="${utente}">
+                <ul th:if="${#fields.hasGlobalErrors()}">
+                    <p style="color: red">Errori utente:</p>
+                    <li th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+                        ...
+                    </li>
+                </ul>
+            </div>
+            <div th:object="${credenziali}">
+                <ul th:if="${#fields.hasGlobalErrors()}">
+                    <p style="color: red">Errori credenziali:</p>
+                    <li th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+                        ...
+                    </li>
+                </ul>
+            </div>
+        </form>
+
+    </section>
+
+    <footer>
+        <p class="fine">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>

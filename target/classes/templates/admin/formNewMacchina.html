@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<head>
+		<title>
+			Concessionario Macale - Aggiungi
+		</title>
+		<link rel="stylesheet" href="/css/stile.css?version=2" />
+	</head>
+	
+	<body>
+        <header>
+			<table id="table-header">
+				<tr class="header">
+					<td style="width:5%">
+						<a class="header" href="/admin/aggiungi"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+					</td>
+					<td style="width:90%">
+						<h1 class="header">Concessionario Macale</h1>
+					</td>
+					<td style="width:5%">
+						<a class="header" href="/logout"><img class="header" src="/immagini/pulsanti/profiloAdmin.png"/></a>
+					</td>
+				</tr>
+			</table>
+		</header>
+          
+        <article>
+          
+          
+         <section>
+           <p><sup>*</sup>: Campo obbligatorio</p>
+           <form th:action="@{/admin/macchine}" method="POST">
+				<fieldset>
+				   <h2> Modello </h2>
+
+					<p>
+						Fabbrica:<sup>*</sup> <input type="text" name="fabbrica" placeholder="Fabbrica"/>
+						<!--<span th:if="${#fields.hasErrors('modello.fabbrica')}" th:errors="*{modello.fabbrica}"></span>-->
+					</p>
+					<p>
+						Nome:<sup>*</sup> <input type="text" name="nome" placeholder="Nome"/><br>
+						<!--<span th:if="${#fields.hasErrors('modello.nome')}" th:errors="*{modello.nome}"></span>-->
+					</p>
+					<p>
+						Posti:<sup>*</sup> <input type="text" name="posti" placeholder="Posti"/><br>
+						<!--<span th:if="${#fields.hasErrors('modello.posti')}" th:errors="*{modello.posti}"></span>-->
+					</p>
+					<p>
+						Cilindrata:<sup>*</sup> <input type="text" name="cilindrata" placeholder="Cilindrata"/><br>
+						<!--<span th:if="${#fields.hasErrors('modello.cilindrata')}" th:errors="*{modello.cilindrata}"></span>-->
+					</p>
+					<p>
+						Cavalli:<sup>*</sup> <input type="text" name="cavalli" placeholder="Cavalli"/><br>
+						<!--<span th:if="${#fields.hasErrors('modello.cavalli')}" th:errors="*{modello.cavalli}"></span>-->
+					</p>
+				</fieldset>
+			   <fieldset>
+				   <h2> Veicolo </h2>
+				   <p>
+					   Telaio:<sup>*</sup> <input type="text" name="telaio" placeholder="Telaio"/>
+					   <!--<span th:if="${#fields.hasErrors('veicolo.telaio')}" th:errors="*{veicolo.telaio}"></span>-->
+				   </p>
+				   <p>
+					   Anno:<sup>*</sup> <input type="text" name="anno" placeholder="Anno"/><br>
+					   <!--<span th:if="${#fields.hasErrors('veicolo.anno')}" th:errors="*{veicolo.anno}"></span>-->
+				   </p>
+				   <p>
+					   Targa: <input type="text" name="targa" placeholder="Targa"/><br>
+					   <!--<span th:if="${#fields.hasErrors('veicolo.targa')}" th:errors="*{veicolo.targa}"></span>-->
+				   </p>
+				   <p>
+					   Colore:<sup>*</sup> <input type="text" name="colore" placeholder="Colore"/><br>
+					   <!--<span th:if="${#fields.hasErrors('veicolo.colore')}" th:errors="*{veicolo.colore}"></span>-->
+				   </p>
+				    <p>
+					   Prezzo: <input type="text" name="prezzo" placeholder="Prezzo"/><br>
+				   </p>
+				   <p>
+					   Cambio:<sup>*</sup>
+					   <select name="cambio">
+						   <option value=""> </option>
+						   <option value="Manuale">Manuale</option>
+						   <option value="Automatico">Automatico</option>
+					   </select>
+					   <br>
+					   <!--<span th:if="${#fields.hasErrors('veicolo.cambio')}" th:errors="*{veicolo.cambio}"></span>-->
+				   </p>
+			   </fieldset>
+			   <fieldset>
+				<h2> Alimentazione </h2>
+				   <p>
+					Motorizzazione:<sup>*</sup>
+				
+					<select name="carburante" id="lang">
+
+	        			<option value="Benzina">Benzina</option>
+				        <option value="Gasolio">Gasolio</option>
+				        <option value="GPL">GPL</option>
+				        <option value="Ibrida">Ibrida</option>
+				        <option value="Elettrica">Elettrica</option>
+	     			</select>
+	     			<br>
+     			</p>
+				<!--<h2> Immagine </h2>
+				 	<p> 
+					 	Carica immagine: <input type="file" name="immagine"/><br>
+				 	</p>-->
+
+				   </fieldset>
+			   <p><button type="submit">INSERISCI</button></p>
+			   <div th:object="${modello}">
+				   <ul th:if="${#fields.hasGlobalErrors()}">
+					   <p style="color: red">Errori modello:</p>
+					   <li th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+						   ...
+					   </li>
+				   </ul>
+			   </div>
+			   <div th:object="${veicolo}">
+				   <ul th:if="${#fields.hasGlobalErrors()}">
+					   <p style="color: red">Errori veicolo:</p>
+					   <li th:each="err : ${#fields.globalErrors()}" th:text="${err}">
+						   ...
+					   </li>
+				   </ul>
+			   </div>
+		   </form>
+
+          </section>
+          
+          <footer>
+			  <p class="fine">Creato da: Andrea Macale (matr. 560793)</p>
+		  </footer>
+          
+      </article>
+	</body>		
+</html>

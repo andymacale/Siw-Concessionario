@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Concessionario Macale - Prenotazione
+    </title>
+    <link rel="stylesheet" href="/css/stile.css?version=2" />
+</head>
+
+<body>
+<header>
+    <table id="table-header">
+        <tr class="header">
+            <td style="width:5%">
+                <a class="header" href="/admin/formVendi"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+            </td>
+            <td style="width:90%">
+                <h1 class="header">Concessionario Macale</h1>
+            </td>
+            <td style="width:5%">
+                <a class="header" href="/logout"><img class="header" src="/immagini/pulsanti/profiloAdmin.png"/></a>
+            </td>
+        </tr>
+    </table>
+</header>
+
+<article>
+    <section>
+            <p style="color: red">Impossibile vendere la macchina:
+                <span th:text="${messaggioErrore}">
+                   errore
+                </span>
+            </p>
+    </section>
+
+    <footer>
+        <p class="fine">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>

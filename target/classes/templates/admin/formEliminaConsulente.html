@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<head>
+		<title>
+			Concessionario Macale - Aggiungi
+		</title>
+		<link rel="stylesheet" href="/css/stile.css?version=2" />
+	</head>
+	
+	<body>
+        <header>
+			<table id="table-header">
+				<tr class="header">
+					<td style="width:5%">
+						<a class="header" href="/admin/aggiorna"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+					</td>
+					<td style="width:90%">
+						<h1 class="header">Concessionario Macale</h1>
+					</td>
+					<td style="width:5%">
+						<a class="header" href="/logout"><img class="header" src="/immagini/pulsanti/profiloAdmin.png"/></a>
+					</td>
+				</tr>
+			</table>
+		</header>
+          
+        <article>
+          
+          
+         <section>
+			 <p style="color: red"> Attenzione: eliminando il consulente, vengono eliminate tutte le prenotazioni prese a suo carico!</p>
+			 <h2>Consulente da eliminare: </h2>
+			 <form th:action="@{/admin/eliminaConsulente}" method="POST">
+			   <p>
+				   <select name="codiceFiscale">
+					   <option value=""> </option>
+					   <span th:each="consulente : ${consulenti}">
+							<option th:value="*{consulente.codiceFiscale}">
+								<span th:text="*{consulente.nome}">nome</span>
+								<span th:text="*{consulente.cognome}">cognome</span>
+								<span th:text="*{consulente.dataDiNascita}">nascita</span>
+							</option>
+						</span>
+				   </select>
+			   </p>
+			   <p><button type="submit">ELIMINA</button></p>
+          	 </form>
+          </section>
+          
+          <footer>
+			  <p class="fine">Creato da: Andrea Macale (matr. 560793)</p>
+		  </footer>
+          
+      </article>
+	</body>		
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>
+        Concessionario Macale - Login
+    </title>
+    <link rel="stylesheet" href="/css/stile.css?version=2" />
+</head>
+
+<body>
+<header>
+    <table id="table-header">
+        <tr class="header">
+            <td style="width:5%">
+                <a class="header" href="/"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+            </td>
+            <td style="width:90%">
+                <h1 class="header">Concessionario Macale</h1>
+            </td>
+            <td style="width:5%">
+                <p class="header"></p>
+            </td>
+        </tr>
+    </table>
+</header>
+
+<article>
+
+
+    <section>
+        <form th:action="@{/login}" method="POST">
+            <p><sup>*</sup>: Campo obbligatorio</p>
+            <fieldset>
+                <h2>Login: </h2>
+                <p>
+                    Username<sup>*</sup>: <input type="text" name="username" placeholder="Username"/>
+                </p>
+                <p>
+                    Password<sup>*</sup>: <input type="password" name="password" placeholder="Password"/>
+                </p>
+                <p style="color: red">
+                    <span th:if="${param.error != null}">Username o password non corretti!</span>
+                </p>
+            </fieldset>
+            <p><button type="submit">LOGIN</button></p>
+        </form>
+        <p>
+            Non sei registrato:
+            <button type="submit"><a style="text-decoration: none; color: white" th:href="@{/register}">REGISTRATI</a></button>
+        </p>
+    </section>
+
+    <footer>
+        <p class="fine">Creato da: Andrea Macale (matr. 560793)</p>
+    </footer>
+
+</article>
+</body>
+</html>
