@@ -1,6 +1,7 @@
 package it.uniroma3.siw.model;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -18,6 +19,7 @@ public class Prenotazione {
     public Long prog;
 
     @Column(nullable = false)
+    @DateTimeFormat(pattern="dd-MM-yyyy")
     public LocalDate dataPrenotazione;
 
     @Column(nullable = false)

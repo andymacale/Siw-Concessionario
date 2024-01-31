@@ -106,7 +106,6 @@ public class PrenotazioneController {
         }
 
         model.addAttribute("prenotazioni", prenotazioni);
-        model.addAttribute("num", this.prenotazioneService.contaRisultati(prenotazioni));
         return "admin/risPrenotazioni.html";
     }
 
@@ -122,7 +121,6 @@ public class PrenotazioneController {
         Utente utente = this.utenteService.findByEmail(userDetails.getUsername());
         List<Prenotazione> prenotazioni = this.prenotazioneService.findByPersona(utente);
         model.addAttribute("prenotazioni", prenotazioni);
-        model.addAttribute("num", this.prenotazioneService.contaRisultati(prenotazioni));
         return "risPrenotazioniEffettuate.html";
     }
 

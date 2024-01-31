@@ -8,4 +8,6 @@ import it.uniroma3.siw.model.FileData;
 
 public interface FileDataRepository extends CrudRepository<FileData, Long>{
 	public Optional<FileData> findByNome(String nome);
+
+	public FileData save(FileData file);
 }

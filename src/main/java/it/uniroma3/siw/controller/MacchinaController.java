@@ -125,7 +125,6 @@ public class MacchinaController {
 	@PostMapping("/cercaMacchine")
 	public String cercaMacchine(Model model, @RequestParam String fabbrica, @RequestParam String nome, @RequestParam String colore, @RequestParam String cambio, @RequestParam String carburante, @RequestParam String prezzoMinimo, @RequestParam String prezzoMassimo, @RequestParam String venduta, @RequestParam String ordinamento, @RequestParam String tipo) {
 		List<Veicolo> veicoli = this.veicoloService.findVeicoli(primaMaiuscola(fabbrica), primaMaiuscola(nome), carburante, primaMaiuscola(colore), pulisci(cambio), prezzoMinimo, prezzoMassimo, venduta, ordinamento, tipo);
-		model.addAttribute("num", this.veicoloService.contaRisultati(veicoli));
 		model.addAttribute("veicoli", veicoli);
 		if(veicoli != null) {
 			for (Veicolo veicolo : veicoli) {

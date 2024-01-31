@@ -23,8 +23,8 @@ public class Consulente {
     @Column(nullable = false)
     public String cognome;
 
-    @DateTimeFormat(pattern="dd-MM-yyyy")
     @Column(columnDefinition = "DATE", nullable = false)
+    @DateTimeFormat(pattern="dd-MM-yyyy")
     @NotNull
     public LocalDate dataDiNascita;
 

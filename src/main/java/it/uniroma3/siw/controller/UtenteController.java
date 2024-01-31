@@ -20,7 +20,6 @@ public class UtenteController {
     @GetMapping("/admin/risUtenti")
     public String getUtenti(Model model) {
         List<Credenziali> credenziali = this.credenzialiService.findAll();
-        model.addAttribute("num", this.credenzialiService.contaRisultati(credenziali));
         model.addAttribute("credenziali", credenziali);
         return "admin/risUtenti.html";
     }

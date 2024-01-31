@@ -29,12 +29,28 @@
           
           
          <section>
-           <form action="/image" method="POST">
+           <form th:action="@{'/admin/image'}" method="POST" enctype="multipart/form-data">
 				<h2> Immagine </h2>
-				 	<p> 
-					 	Carica immagine: <input type="file" name="image"/><br>
+				<p>Veicolo<sup>*</sup>:</p>
+			   <select name="telaio">
+					   <option value=""> </option>
+					   <span th:each="veicolo : ${veicoli}">
+								<option th:value="*{veicolo.telaio}">
+									<span th:text="*{veicolo.modello.fabbrica}">fabbrica </span>
+									<span th:text="*{veicolo.modello.nome}">nome </span>
+									telaio: <span th:text="*{veicolo.telaio}">telaio </span>
+									targa: <span th:text="*{veicolo.targa}">targa </span>
+									prezzo:
+									<span th:text="*{veicolo.prezzo}">prezzo </span>
+								</option>
+							</span>
+				   </select>
+			   		<p>
+					 	Carica immagine: <input type="file" name="image" accept="/image/jpg" /><br>
+						(Formato accettato: .jpg)<br>
+						(Campo vuoto elimina il collegamento con l'immagine precedente!)
 				 	</p>
-				<p><button type="submit">INSERISCI</button></p>
+				<p><button type="submit">CARICA</button></p>
 				
           	 </form>
           </section>

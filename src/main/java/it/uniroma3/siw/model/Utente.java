@@ -4,6 +4,7 @@ package it.uniroma3.siw.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -24,6 +25,7 @@ public class Utente {
     public String cognome;
 
     @Column(nullable = false)
+    @DateTimeFormat(pattern="dd-MM-yyyy")
     public LocalDate dataNascita;
 
     @Column(unique = true, nullable = false)

@@ -18,6 +18,11 @@ public class CustomErrorController implements ErrorController {
         if (stato != null && Integer.valueOf(stato.toString()) == HttpStatus.NOT_FOUND.value()) {
             return "404.html";
         }
+
+        if (stato != null && Integer.valueOf(stato.toString()) == HttpStatus.FORBIDDEN.value()) {
+            return "accessoNegato.html";
+        }
+
         return "error.html";
     }
 }

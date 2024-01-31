@@ -2,6 +2,7 @@ package it.uniroma3.siw.service;
 
 import java.util.*;
 
+import it.uniroma3.siw.model.Prenotazione;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -149,13 +150,6 @@ public class VeicoloService {
 		return out;
 	}
 
-	public int contaRisultati(List<Veicolo> veicoli) {
-		if(veicoli == null) {
-			return 0;
-		}
-
-		return veicoli.size();
-	}
 
 	
 }

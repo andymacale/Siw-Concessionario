@@ -324,13 +324,6 @@ public class PrenotazioneService {
         return this.prenotazioneRepository.findById(id);
     }
 
-    public int contaRisultati(List<Prenotazione> prenotazione) {
-        if(prenotazione == null) {
-            return 0;
-        }
-        return prenotazione.size();
-    }
-
     @Transactional
     public Prenotazione save(Prenotazione prenotazione) {
         return this.prenotazioneRepository.save(prenotazione);

@@ -36,13 +36,6 @@ public class CredenzialiService {
         return this.credenzialiRepository.findAll();
     }
 
-    public int contaRisultati(List<Credenziali> credenzialis) {
-        if(credenzialis == null) {
-            return 0;
-        }
-        return credenzialis.size();
-    }
-
     public void delate(Credenziali credenziali) {
         this.credenzialiRepository.delete(credenziali);
     }

@@ -34,8 +34,7 @@
           
           
          <section>
-			<h2 class="risultati"> Macchina trovate: 
-				<span th:text="${num}">numero</span>
+			<h2 class="risultati"> Macchina trovate:
 			</h2>
 
 			  <div id="flex_risultati">
@@ -79,7 +78,7 @@
 										<img class="risultati" src="/immagini/non_trovata.png" />
 									</span>
 									<span th:unless="*{veicolo.urlImmagine == null}">
-										<img class="risultati" src="*{veicolo.urlImmagine}" />
+										<img class="risultati" th:src="*{veicolo.urlImmagine}" />
 									</span>
 								</td>
 							</tr>

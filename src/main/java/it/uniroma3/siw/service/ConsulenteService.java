@@ -25,27 +25,8 @@ public class ConsulenteService {
         return this.consulenteRepository.findByCodiceFiscale(codiceFiscale);
     }
 
-    private String pulisciData(String data) {
-        StringBuilder out = new StringBuilder();
-        for (char carattere : data.toCharArray()) {
-            if(carattere >= '0' && carattere <= '9') {
-                out.append(carattere);
-            }
-        }
-        return out.toString();
-    }
-
     public List<Consulente> findAll() {
-
         List<Consulente> consulenti = this.consulenteRepository.findAll();
-        /*for (Consulente consulente : consulenti) {
-            String nascitaStr = consulente.getDataDiNascita().toString();
-            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            nascitaStr = pulisciData(nascitaStr);
-            LocalDate nascita = LocalDate.parse(nascitaStr, formato);
-            consulente.setDataDiNascita(nascita);
-        }*/
-
         return consulenti;
     }
 
