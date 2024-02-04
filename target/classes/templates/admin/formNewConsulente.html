@@ -29,37 +29,57 @@
           
           
          <section>
-           <p><sup>*</sup>: Campo obbligatorio</p>
+			 <p class="obbligatorio"><sup>*</sup>: Campo obbligatorio</p>
 			<h2>Consulente: </h2>
            <form th:action="@{/admin/consulenti}" method="POST">
-			   <p>
-				   Nome:<sup>*</sup> <input type="text" name="nome" placeholder="Nome"/><br>
-				   <!--<span class="errore" th:if="${#fields.hasErrors('nome')}" th:errors="${nome}">Errore</span>-->
-			   </p>
-
-			   <p>
-				   Cognome:<sup>*</sup> <input type="text" name="cognome" placeholder="Cognome"/><br>
-				   <!-- <span class="errore" th:if="${#fields.hasErrors('cognome')}" th:errors="${cognome}">Errore</span>-->
-			   </p>
-			   <p>
-				   Sesso:<sup>*</sup>
-
-				   <select name="sesso" id="lang">
-					   <option value=""> </option>
-					   <option value="M">Maschile</option>
-					   <option value="F">Femminile</option>
-				   </select>
-				   <br>
-				   <!--<span class="errore" th:if="${#fields.hasErrors('sesso')}" th:errors="${sesso}">Errore</span>-->
-			   </p>
-			   <p>
-				   Data di nascita:<sup>*</sup> <input type="date" name="dataDiNascita" placeholder="Data di nascita"/><br>
-				   <!--<span class="errore" th:if="${#fields.hasErrors('dataDiNascita')}" th:errors="${dataDiNascita}">Errore</span>-->
-			   </p>
-			   <p>
-				   Codice fiscale:<sup>*</sup> <input type="text" name="codiceFiscale" placeholder="Codice fiscale"/><br>
-				   <!-- <span class="errore" th:if="${#fields.hasErrors('codiceFiscale')}" th:errors="${codiceFiscale}">Errore</span>-->
-			   </p>
+			   <table>
+				   <tr>
+					   <td style="width: 20%">
+						   <p>Nome<sup>*</sup>:</p>
+					   </td>
+					   <td style="width: 60%">
+						   <p><input type="text" name="nome" placeholder="Nome"/></p>
+					   </td>
+				   </tr>
+				   <tr>
+					   <td style="width: 20%">
+						   <p>Cognome<sup>*</sup>:</p>
+					   </td>
+					   <td style="width: 60%">
+						   <p><input type="text" name="cognome" placeholder="Cognome"/></p>
+					   </td>
+				   </tr>
+				   <tr>
+					   <td style="width: 20%">
+						   <p>Sesso<sup>*</sup>:</p>
+					   </td>
+					   <td style="width: 60%">
+						   <p>
+							   <select name="sesso">
+								   <option value=""> </option>
+								   <option value="M">Maschile</option>
+								   <option value="F">Femminile</option>
+							   </select>
+						   </p>
+					   </td>
+				   </tr>
+				   <tr>
+					   <td style="width: 20%">
+						   <p>Data di nascita<sup>*</sup>:</p>
+					   </td>
+					   <td style="width: 60%">
+						   <p><input type="date" name="dataDiNascita" placeholder="Data di nascita"/></p>
+					   </td>
+				   </tr>
+				   <tr>
+					   <td style="width: 20%">
+						   <p>Codice fiscale<sup>*</sup>:</p>
+					   </td>
+					   <td style="width: 60%">
+						   <p><input type="text" name="codiceFiscale" placeholder="Codice fiscale"/></p>
+					   </td>
+				   </tr>
+			   </table>
 			   <p><button type="submit">INSERISCI</button></p>
 			   <div th:object="${consulente}">
 				   <ul th:if="${#fields.hasGlobalErrors()}">

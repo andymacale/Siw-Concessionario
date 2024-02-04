@@ -46,7 +46,7 @@
 										<b>Cognome:</b> <span th:text="*{credenziale.utente.cognome}">cognome</span>
 									</p>
 									<p class="risultatiPrenotazioni">
-										<b>Data di nascita:</b> <span th:text="*{credenziale.utente.dataNascita}">data</span>
+										<b>Data di nascita:</b> <span th:text="*{#temporals.format(credenziale.utente.dataNascita, 'dd-MM-yyyy')}">data</span>
 									</p>
 									<p class="risultatiPrenotazioni">
 										<b>Email:</b> <span th:text="*{credenziale.username}">email</span>

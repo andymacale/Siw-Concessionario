@@ -37,7 +37,7 @@
                 <b>Cognome:</b> <span th:text="*{utente.cognome}">cognome</span>
             </p>
             <p>
-                <b>Data di nascita:</b> <span th:text="*{utente.dataNascita}">data</span>
+                <b>Data di nascita:</b> <span th:text="*{#temporals.format(utente.dataNascita, 'dd-MM-yyyy')}">data</span>
             </p>
             <p>
                 <b>Email:</b> <span th:text="*{utente.email}">email</span>

@@ -32,27 +32,39 @@
         <form th:action="@{/admin/vendi}" method="POST">
             <fieldset>
                 <h2>Seleziona la macchina:</h2>
-                <select name="telaio">
-                    <option value=""> </option>
-                    <span th:each="veicolo : ${veicoli}">
-							<option th:value="*{veicolo.telaio}">
-								<span th:text="*{veicolo.modello.fabbrica}">fabbrica </span>
-								<span th:text="*{veicolo.modello.nome}">nome </span>
-                                telaio: <span th:text="*{veicolo.telaio}">telaio </span>
-                                targa: <span th:text="*{veicolo.targa}">targa </span>
-                                prezzo:
-                                <span th:text="*{veicolo.prezzo}">prezzo </span>
-							</option>
-						</span>
-                </select>
-            </fieldset>
-            <fieldset>
-                <p>Lasciare vuoto se si vuole mantanere il prezzo originale</p>
-                <p>
-                    Prezzo: <input type="text" name="prezzo" placeholder="Prezzo"/><br>
-                </p>
-            </fieldset>
-
+                <table>
+                    <tr>
+                        <td style="width: 20%">
+                            <p>Veicolo:</p>
+                        </td>
+                        <td style="width: 60%">
+                            <p>
+                                <select name="telaio">
+                                    <option value=""> </option>
+                                    <span th:each="veicolo : ${veicoli}">
+                                        <option th:value="*{veicolo.telaio}">
+                                            <span th:text="*{veicolo.modello.fabbrica}">fabbrica </span>
+                                            <span th:text="*{veicolo.modello.nome}">nome </span>
+                                            telaio: <span th:text="*{veicolo.telaio}">telaio </span>
+                                            targa: <span th:text="*{veicolo.targa}">targa </span>
+                                            prezzo:
+                                            <span th:text="*{veicolo.prezzo}">prezzo </span>
+                                        </option>
+						            </span>
+                                </select>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%">
+                            <p>Prezzo: </p>
+                        </td>
+                        <td style="width: 60%">
+                            <p><input type="text" name="prezzo" placeholder="Prezzo"/></p>
+                            <p style="font-size: 20px">Lasciare vuoto se si vuole mantanere il prezzo originale</p>
+                        </td>
+                    </tr>
+                </table>
             <p><button type="submit">INSERISCI</button></p>
         </form>
 

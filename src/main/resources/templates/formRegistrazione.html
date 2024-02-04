@@ -30,33 +30,58 @@
 
     <section>
         <form th:action="@{/register}" method="POST">
-            <p><sup>*</sup>: Campo obbligatorio</p>
+            <p class="obbligatorio"><sup>*</sup>: Campo obbligatorio</p>
             <fieldset>
             <h2>Utente</h2>
-                <p>
-                Nome<sup>*</sup>: <input type="text" placeholder="Nome"  th:field="${utente.nome}"/>
-                    <!-- <span th:if="${#fields.hasErrors('utente.nome')}" th:error="*{utente.nome}"></span> -->
-                </p>
-                <p>
-                    Cognome<sup>*</sup>: <input type="text" placeholder="Cognome"  th:field="${utente.cognome}"/>
-                    <span th:if="${#fields.hasErrors('utente.cognome')}" th:error="*{utente.cognome}"></span>
-                </p>
-                <p>
-                    Data di nascita<sup>*</sup>: <input type="date" placeholder="Data di nascita"  th:field="${utente.dataNascita}"/>
-                    <!--<span th:if="${#fields.hasErrors('utente.dataNascita')}" th:error="*{utente.dataNascita}"></span>-->
-                </p>
 
+                <table>
+                    <tr>
+                        <td style="width: 20%">
+                            <p>Nome<sup>*</sup>:</p>
+                        </td>
+                        <td style="width: 60%">
+                            <p><input type="text" placeholder="Nome"  th:field="${utente.nome}"/></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%">
+                            <p>Cognome<sup>*</sup>: </p>
+                        </td>
+                        <td style="width: 60%">
+                            <p><input type="text" placeholder="Cognome"  th:field="${utente.cognome}"/></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%">
+                            <p>Data di nascita<sup>*</sup>:</p>
+                        </td>
+                        <td style="width: 60%">
+                            <p><input type="date" placeholder="Data di nascita"  th:field="${utente.dataNascita}"/></p>
+                        </td>
+                    </tr>
+                </table>
             </fieldset>
+            <p style="height: 1%"></p>
             <fieldset>
                 <h2>Credenziali</h2>
-                <p>
-                    Email<sup>*</sup>: <input type="text" placeholder="Email" th:field="${credenziali.username}"/>
-                    <!--<span th:if="${#fields.hasErrors('credenziali.username')}" th:error="*{credenziali.username}"></span>-->
-                </p>
-                <p>
-                    Password<sup>*</sup>: <input type="password" placeholder="Password"  th:field="${credenziali.password}"/>
-                    <!--<span th:if="${#fields.hasErrors('credenziali.password')}" th:error="*{credenziali.password}"></span>-->
-                </p>
+                <table>
+                    <tr>
+                        <td style="width: 20%">
+                            <p>Email<sup>*</sup>:</p>
+                        </td>
+                        <td style="width: 60%">
+                            <p><input type="text" placeholder="Email" th:field="${credenziali.username}"/></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%">
+                            <p>Password<sup>*</sup>: </p>
+                        </td>
+                        <td style="width: 60%">
+                            <p><input type="password" placeholder="Password"  th:field="${credenziali.password}"/></p>
+                        </td>
+                    </tr>
+                </table>
             </fieldset>
             <p><button type="submit">REGISTRATI</button></p>
             <div th:object="${utente}">

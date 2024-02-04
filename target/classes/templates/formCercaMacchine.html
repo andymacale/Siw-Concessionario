@@ -35,92 +35,145 @@
           
          <section>
 			   <form th:action="@{/cercaMacchine}" method="POST">
-				   <h2 align="center"> Macchina da cercare </h2>
+				   <h2> Macchina da cercare </h2>
 				   <fieldset>
-					   <div style="margin-left: 35%">
-						   <p>
-							   Fabbrica: <input type="text" name="fabbrica"  placeholder="Fabbrica"/>
-						   </p>
-						   <p>
-							   Nome: <input type="text" name="nome" placeholder="Nome"/><br>
-						   </p>
-					   </div>
+					   <table>
+						   <tr>
+							   <td style="width: 20%">
+								   <p>Fabbrica:</p>
+							   </td>
+							   <td style="width: 60%">
+								   <p><input type="text" name="fabbrica"  placeholder="Fabbrica"/></p>
+							   </td>
+						   </tr>
+						   <tr>
+							   <td style="width: 20%">
+								   <p>Nome: </p>
+							   </td>
+							   <td style="width: 60%">
+								   <p><input type="text" name="nome" placeholder="Nome"/></p>
+							   </td>
+						   </tr>
+					   </table>
 				   </fieldset>
+				   <p style="height: 1%"></p>
 				   <fieldset>
-					   <div style="margin-left: 35%">
-						   <p>
-							   Colore: <input type="text" name="colore" placeholder="Colore"/>
-						   </p>
-						   <p>
-							   Cambio:
-							   <select name="cambio">
-								   <option value=""> </option>
-								   <option value="Manuale">Manuale</option>
-								   <option value="Automatico">Automatico</option>
-							   </select>
-						   </p>
-						   <p>
-							   Carburante:
-							   <select name="carburante">
-								   <option value=""> </option>
-								   <option value="Benzina">Benzina</option>
-								   <option value="Gasolio">Gasolio</option>
-								   <option value="GPL">GPL</option>
-								   <option value="Ibrida">Ibrida</option>
-								   <option value="Elettrica">Elettrica</option>
-							   </select>
-						   </p>
-						   <p>
-							   Cambio:
-							   <select name="cambio">
-								   <option value=""> </option>
-								   <option value="Manuale">Manuale</option>
-								   <option value="Automatico">Automatico</option>
-							   </select>
-						   </p>
-					   </div>
+					   <table>
+						   <tr>
+							   <td style="width: 20%">
+								   <p>Colore:</p>
+							   </td>
+							   <td style="width: 60%">
+								   <p><input type="text" name="colore" placeholder="Colore"/></p>
+							   </td>
+						   </tr>
+						   <tr>
+							   <td style="width: 20%">
+								   <p>Cambio:</p>
+							   </td>
+							   <td style="width: 60%">
+								   <p>
+									   <select name="cambio">
+										   <option value=""> </option>
+										   <option value="Manuale">Manuale</option>
+										   <option value="Automatico">Automatico</option>
+									   </select>
+								   </p>
+							   </td>
+						   </tr>
+						   <tr>
+							   <td style="width: 20%">
+								   <p>Carburante:</p>
+							   </td>
+							   <td style="width: 60%">
+								   <p>
+									   <select name="carburante">
+										   <option value=""> </option>
+										   <option value="Benzina">Benzina</option>
+										   <option value="Gasolio">Gasolio</option>
+										   <option value="GPL">GPL</option>
+										   <option value="Ibrida">Ibrida</option>
+										   <option value="Elettrica">Elettrica</option>
+									   </select>
+								   </p>
+							   </td>
+						   </tr>
+						   <tr>
+							   <td style="width: 20%">
+								   <p>Cambio:</p>
+							   </td>
+							   <td style="width: 60%">
+								   <p>
+									   <select name="cambio">
+										   <option value=""> </option>
+										   <option value="Manuale">Manuale</option>
+										   <option value="Automatico">Automatico</option>
+									   </select>
+								   </p>
+							   </td>
+						   </tr>
+					   </table>
 				   </fieldset>
+				   <p style="height: 1%"></p>
 				   <fieldset>
-					   <div style="margin-left: 35%">
-						   <p>
-							   Prezzo: da
-							   <select name="prezzoMinimo">
-								   <option value="">Qualsiasi</option>
-								   <option value="2000">€2.000</option>
-								   <option value="3000">€3.000</option>
-								   <option value="6500">€6.500</option>
-								   <option value="10000">€10.000</option>
-							   </select>
-							   a
-							   <select name="prezzoMassimo">
-								   <option value="">Qualsiasi</option>
-								   <option value="4000">€4.000</option>
-								   <option value="6000">€6.000</option>
-								   <option value="10000">€10.500</option>
-								   <option value="50000">€50.000</option>
-							   </select>
+					   <table>
+						   <tr>
+							   <td style="width: 20%">
+								   <p>Prezzo:</p>
+							   </td>
+							   <td style="width: 60%">
+								   <p>
+									   da
+									   <select name="prezzoMinimo">
+										   <option value="">Qualsiasi</option>
+										   <option value="2000">€2.000</option>
+										   <option value="3000">€3.000</option>
+										   <option value="6500">€6.500</option>
+										   <option value="10000">€10.000</option>
+									   </select>
+									   <label>a</label>
+									   <select name="prezzoMassimo">
+										   <option value="">Qualsiasi</option>
+										   <option value="4000">€4.000</option>
+										   <option value="6000">€6.000</option>
+										   <option value="10000">€10.500</option>
+										   <option value="50000">€50.000</option>
+									   </select>
+								   </p>
+							   </td>
+						   </tr>
+						   <tr>
+							   <td style="width: 20%">
+								   <p>Ricerca auto:</p>
+							   </td>
+							   <td style="width: 60%">
+								   <p>
+									   <select name="venduta">
+										   <option value="">Tutte</option>
+										   <option value="false">Solo quelle disponibili</option>
+									   </select>
+								   </p>
+							   </td>
+						   </tr>
+						   <tr>
+							   <td style="width: 20%">
+								   <p>Ordina per:</p>
+							   </td>
+							   <td style="width: 60%">
+								   <p>
+									   <select name="ordinamento">
+										   <option value="v.anno">Anno</option>
+										   <option value="v.prezzo">Prezzo</option>
+									   </select>
 
-						   </p>
-						   <p>
-							   Auto da ricercare:
-							   <select name="venduta">
-								   <option value="">Tutte</option>
-								   <option value="false">Solo quelle disponibili</option>
-							   </select>
-						   </p>
-							<p>
-							   Ordina per:
-							   <select name="ordinamento">
-								   <option value="v.anno">Anno</option>
-								   <option value="v.prezzo">Prezzo</option>
-							   </select>
-
-							   <select name="tipo">
-								   <option value="DESC">decrescente</option>
-								   <option value="ASC">crescente</option>
-							   </select>
-						   </p>
-					   </div>
+									   <select name="tipo">
+										   <option value="DESC">decrescente</option>
+										   <option value="ASC">crescente</option>
+									   </select>
+								   </p>
+							   </td>
+						   </tr>
+					   </table>
 				   </fieldset>
 					   <p><button style="margin-left: 48%" type="submit">CERCA</button></p>
 			   </form>

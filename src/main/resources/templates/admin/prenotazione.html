@@ -37,7 +37,7 @@
                 <b>Utente:</b> <span th:text="*{prenotazione.persona.email}">email</span>
             </p>
                 <p class="risultati">
-                    <b>Data:</b> <span th:text="*{prenotazione.dataPrenotazione}">nome</span>
+                    <b>Data:</b> <span th:text="*{#temporals.format(prenotazione.dataPrenotazione, 'dd-MM-yyyy')}">nome</span>
                 </p>
                 <p class="risultati">
                     <b>Ora:</b> <span th:text="*{prenotazione.ora}">ora</span>

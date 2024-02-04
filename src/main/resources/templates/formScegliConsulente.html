@@ -30,7 +30,7 @@
           
          <section>
            <form th:action="@{/consulente}" method="POST">
-			   <p><sup>*</sup>: Campo obbligatorio</p>
+			   <p class="obbligatorio"><sup>*</sup>: Campo obbligatorio</p>
 			   <h2> Seleziona il consulente: </h2>
 			   <p>
 				   <sup>*</sup><select name="codiceFiscale">
@@ -39,7 +39,7 @@
 							<option th:value="*{consulente.codiceFiscale}">
 								<span th:text="*{consulente.nome}">nome</span>
 								<span th:text="*{consulente.cognome}">cognome</span>
-								<span th:text="*{consulente.dataDiNascita}">nascita</span>
+								<span th:text="*{#temporals.format(consulente.dataDiNascita, 'dd-MM-yyyy')}">nascita</span>
 							</option>
 						</span>
 					</select>

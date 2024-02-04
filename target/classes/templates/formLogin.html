@@ -30,15 +30,29 @@
 
     <section>
         <form th:action="@{/login}" method="POST">
-            <p><sup>*</sup>: Campo obbligatorio</p>
+            <p class="obbligatorio"><sup>*</sup>: Campo obbligatorio</p>
             <fieldset>
                 <h2>Login: </h2>
-                <p>
-                    Username<sup>*</sup>: <input type="text" name="username" placeholder="Username"/>
-                </p>
-                <p>
-                    Password<sup>*</sup>: <input type="password" name="password" placeholder="Password"/>
-                </p>
+                <table>
+                    <tr>
+                        <td style="width: 20%">
+                            <p style="text-align: right">
+                                Username<sup>*</sup>:
+                            </p>
+                        </td>
+                        <td style="width: 50%">
+                            <p><input type="text" name="username" placeholder="Username"/></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%">
+                            <p style="text-align: right">Password<sup>*</sup>: </p>
+                        </td>
+                        <td style="width: 50%">
+                            <p><input type="password" name="password" placeholder="Password"/></p>
+                        </td>
+                    </tr>
+                </table>
                 <p style="color: red">
                     <span th:if="${param.error != null}">Username o password non corretti!</span>
                 </p>

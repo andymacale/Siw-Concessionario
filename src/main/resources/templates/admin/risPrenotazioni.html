@@ -37,7 +37,7 @@
 				<div class="risultatiPrenotazioni" th:each="prenotazione : ${prenotazioni}">
 					<a class="risultatiPrenotazioni" th:href="@{'/admin/risPrenotazioni'+'/'+ ${prenotazione.id}}">
 						<p class="risultatiPrenotazioni">
-							<b>Data e ora:</b> <span th:text="*{prenotazione.dataPrenotazione}">data </span>
+							<b>Data e ora:</b> <span th:text="*{#temporals.format(prenotazione.dataPrenotazione, 'dd-MM-yyyy')}">data </span>
 							<span th:text="*{prenotazione.ora}">ora </span>
 						</p>
 						<p class="risultatiPrenotazioni">

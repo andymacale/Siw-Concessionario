@@ -4,7 +4,7 @@ body {
 }
 
 section {
-	min-height: 525px;
+	min-height: 600px;
 	position: static;
 	vertical-align: center;
 }
@@ -274,4 +274,9 @@ li {
 
 fieldset {
 	background-color: rgb(200,200,200);
+}
+
+p.obbligatorio {
+	font-size: 20px;
+	font-style: italic;
 }

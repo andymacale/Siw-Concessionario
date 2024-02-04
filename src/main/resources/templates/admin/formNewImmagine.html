@@ -13,7 +13,7 @@
 			<table id="table-header">
 				<tr class="header">
 					<td style="width:5%">
-						<a class="header" href="/admin/aggiungi"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
+						<a class="header" href="/admin/aggiorna"><img class="header" src="/immagini/pulsanti/indietro.png"/></a>
 					</td>
 					<td style="width:90%">
 						<h1 class="header">Concessionario Macale</h1>
@@ -30,27 +30,41 @@
           
          <section>
            <form th:action="@{'/admin/image'}" method="POST" enctype="multipart/form-data">
-				<h2> Immagine </h2>
-				<p>Veicolo<sup>*</sup>:</p>
-			   <select name="telaio">
-					   <option value=""> </option>
-					   <span th:each="veicolo : ${veicoli}">
-								<option th:value="*{veicolo.telaio}">
-									<span th:text="*{veicolo.modello.fabbrica}">fabbrica </span>
-									<span th:text="*{veicolo.modello.nome}">nome </span>
-									telaio: <span th:text="*{veicolo.telaio}">telaio </span>
-									targa: <span th:text="*{veicolo.targa}">targa </span>
-									prezzo:
-									<span th:text="*{veicolo.prezzo}">prezzo </span>
-								</option>
-							</span>
-				   </select>
-			   		<p>
-					 	Carica immagine: <input type="file" name="image" accept="/image/jpg" /><br>
-						(Formato accettato: .jpg)<br>
-						(Campo vuoto elimina il collegamento con l'immagine precedente!)
-				 	</p>
-				<p><button type="submit">CARICA</button></p>
+			   <p class="obbligatorio"><sup>*</sup>: Campo obbligatorio</p>
+			   <h2> Immagine </h2>
+			   <table>
+				   <tr>
+					   <td style="width: 20%">
+						   <p>Veicolo:</p>
+					   </td>
+					   <td style="width: 60%">
+						   <p>
+							   <select name="telaio">
+								   <option value=""> </option>
+								   <span th:each="veicolo : ${veicoli}">
+										<option th:value="*{veicolo.telaio}">
+											<span th:text="*{veicolo.modello.fabbrica}">fabbrica </span>
+											<span th:text="*{veicolo.modello.nome}">nome </span>
+											telaio: <span th:text="*{veicolo.telaio}">telaio </span>
+											targa: <span th:text="*{veicolo.targa}">targa </span>
+											prezzo:
+											<span th:text="*{veicolo.prezzo}">prezzo </span>
+										</option>
+									</span>
+							   </select>
+						   </p>
+					   </td>
+				   </tr>
+				   <tr>
+					   <td style="width: 20%">
+						   <p>Carica immagine: </p>
+					   </td>
+					   <td style="width: 60%">
+						   <p><input type="file" name="image" accept="/image/jpg" />(.jpg)</p>
+					   </td>
+				   </tr>
+			   </table>
+			   <p><button type="submit">CARICA</button></p>
 				
           	 </form>
           </section>

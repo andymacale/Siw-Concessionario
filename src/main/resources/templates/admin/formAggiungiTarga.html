@@ -30,31 +30,43 @@
 
     <section>
         <form th:action="@{/admin/targa}" method="POST">
-                <fieldset>
                 <h2>Seleziona la macchina:</h2>
-                    <select name="telaio">
-                        <option value=""> </option>
-                        <span th:each="veicolo : ${veicoli}">
-							<option th:value="*{veicolo.telaio}">
-								<span th:text="*{veicolo.modello.fabbrica}">fabbrica </span>
-								<span th:text="*{veicolo.modello.nome}">nome </span>
-                                telaio: <span th:text="*{veicolo.telaio}">telaio </span>
-                                <span th:if="*{veicolo.targa}">
-                                    targa:
-                                    <span th:text="*{veicolo.targa}">targa </span>
-                                </span>
+                    <table>
+                        <tr>
+                            <td style="width: 20%">
+                                <p>Veicolo:</p>
+                            </td>
+                            <td style="width: 60%">
+                                <p>
+                                    <select name="telaio">
+                                        <option value=""> </option>
+                                        <span th:each="veicolo : ${veicoli}">
+                                            <option th:value="*{veicolo.telaio}">
+                                                <span th:text="*{veicolo.modello.fabbrica}">fabbrica </span>
+                                                <span th:text="*{veicolo.modello.nome}">nome </span>
+                                                telaio: <span th:text="*{veicolo.telaio}">telaio </span>
+                                                <span th:if="*{veicolo.targa}">
+                                                    targa:
+                                                    <span th:text="*{veicolo.targa}">targa </span>
+                                                </span>
 
-                                prezzo:
-                                <span th:text="*{veicolo.prezzo}">prezzo </span>
-							</option>
-						</span>
-                    </select>
-                </fieldset>
-            <fieldset>
-                <p>
-                    Nuova targa: <input type="text" name="nuova" placeholder="Nuova targa"/><br>
-                </p>
-            </fieldset>
+                                                prezzo:
+                                                <span th:text="*{veicolo.prezzo}">prezzo </span>
+                                            </option>
+						                </span>
+                                    </select>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 20%">
+                                <p>Nuova targa: </p>
+                            </td>
+                            <td style="width: 60%">
+                                <p><input type="text" name="nuova" placeholder="Nuova targa"/></p>
+                            </td>
+                        </tr>
+                    </table>
 
             <p><button type="submit">INSERISCI</button></p>
         </form>
